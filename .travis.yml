@@ -1,0 +1,24 @@
+sudo: required
+
+languages: cpp
+
+services:
+- docker
+
+before_install:
+- docker pull filcuc/javaqml
+
+script:
+- |
+  docker run --rm -v `pwd`:/repository filcuc/javaqml /bin/bash -c "\
+  export JAVA_HOME=/usr/lib/jvm/java-8-oracle/ && \
+  cd /repository && \
+  javac -h . DOtherSideJNI.java && \
+  mkdir build && \
+  cd build && \
+  cmake .. && \
+  make && \
+  cd .. && \
+  export LD_LIBRARY_PATH=`pwd`/build && \
+  javac Main.java"
+  
