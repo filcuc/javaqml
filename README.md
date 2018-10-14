@@ -1,8 +1,12 @@
-# JavaQml
+# JavaQml 
+[![Build Status](https://travis-ci.org/filcuc/javaqml.svg?branch=master)](https://travis-ci.org/filcuc/javaqml)
+
+## Java bindings for Qt Qml
 Simple test of interfacing DOtherSide with Java
 
 ## Requirements
-DOtherSide compiled and installed in your system path
+- DOtherSide >= 6.3 compiled and installed in your system path
+- C++11 compiler
 
 ## Compile steps
 ```
